@@ -14,6 +14,7 @@ public class Conversation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String message;
+    private String quote;
     private LocalDateTime date;
     
     @ManyToOne
@@ -21,8 +22,9 @@ public class Conversation {
 
     public Conversation() {}
 
-    public Conversation(String message, LocalDateTime date, User user) {
+    public Conversation(String message, String quote, LocalDateTime date, User user) {
         this.message = message;
+        this.quote = quote;
         this.date = date;
         this.user = user;
     }
@@ -41,6 +43,14 @@ public class Conversation {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+    
+    public String getQuote() {
+        return quote;
+    }
+
+    public void setQuote(String quote) {
+        this.quote = quote;
     }
     
     public LocalDateTime getDate() {

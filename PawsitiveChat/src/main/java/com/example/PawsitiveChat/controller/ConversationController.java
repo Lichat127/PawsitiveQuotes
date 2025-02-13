@@ -31,6 +31,8 @@ public class ConversationController {
                                                @RequestParam("message") String message,
                                                Model model) {
         conversationService.saveConversation(username, message);
+        String quote = conversationService.getQuote();
+        model.addAttribute("quote", quote);
         return "conversation";
     }
     

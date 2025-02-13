@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des Utilisateurs</title>
+    <title>Pawsitive Quotes</title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
+	<div class="bear-image"></div>
     <h2>Liste des Utilisateurs</h2>
-    <ul>
+	<ul class="user-list">
         <li th:each="user : ${users}">
             <a th:href="@{/conversations/{id}(id=${user.id})}" th:text="${user.name}"></a>
         </li>

@@ -2,15 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des Conversations</title>
+    <title>Pawsitive Quotes</title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-    <h2>Liste des Conversations</h2>
-    <div th:each="conversation : ${conversations}">
-        <p><strong>Utilisateur :</strong> <span th:text="${conversation.user.name}"></span></p>
-        <p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
-        <p><strong>Date :</strong> <span th:text="${conversation.date}"></span></p>
-        <hr>
-    </div>
+    <h2>Historique des Conversations</h2>
+	<ul class="conversation-list">
+		<li th:each="conversation : ${conversations}">
+			<p><strong>Utilisateur :</strong> <span th:text="${conversation.user.name}"></span></p>
+	        <p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
+	        <p><strong>Réponse :</strong> <span th:text="${conversation.quote}"></span></p>
+	        <p><strong>Date :</strong> <span th:text="${conversation.date}"></span></p>
+		</li>
+	</ul>
 </body>
 </html>
