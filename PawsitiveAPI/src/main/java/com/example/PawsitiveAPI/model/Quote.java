@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Quote {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String content;
 
     public Quote() {}
@@ -18,11 +18,11 @@ public class Quote {
         this.content = content;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
