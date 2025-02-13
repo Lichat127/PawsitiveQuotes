@@ -17,6 +17,11 @@ public class QuoteController {
 
     public QuoteController(QuoteService quoteService) {
         this.quoteService = quoteService;
+    }    
+    
+    @GetMapping
+    public ResponseEntity<String> apiHome() {
+    	return ResponseEntity.ok("Bienvenue sur l'API Pawsitive. Utilisez /api/quote pour obtenir une citation aléatoire.");
     }
 
     @GetMapping("/quote")
