@@ -18,6 +18,10 @@ public class QuoteService {
 
     public Quote getRandomQuote() {
         List<Quote> quotes = quoteRepository.findAll();
+        if (quotes.isEmpty()) {
+        	return null;
+        }
+        
         Random random = new Random();
         return quotes.get(random.nextInt(quotes.size()));
     }
