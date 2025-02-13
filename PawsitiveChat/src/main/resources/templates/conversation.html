@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversation</title>
+</head>
+<body>
+    <h2>PawsitiveQuotes</h2>
+    <form th:action="@{/submit}" method="post">
+        <label for="username">Nom :</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <input type="text" id="message" name="message" required><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
+</html>
