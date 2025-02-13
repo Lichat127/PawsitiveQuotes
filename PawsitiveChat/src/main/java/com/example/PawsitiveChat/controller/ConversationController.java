@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.PawsitiveChat.model.Conversation;
+import com.example.PawsitiveChat.model.User;
 import com.example.PawsitiveChat.service.ConversationService;
 
 @Controller
@@ -25,16 +27,23 @@ public class ConversationController {
     }
 
     @PostMapping("/submit")
-    public String handleConversationSubmission(@RequestParam("userName") String userName,
+    public String handleConversationSubmission(@RequestParam("username") String username,
                                                @RequestParam("message") String message,
                                                Model model) {
-        conversationService.saveConversation(userName, message);
+        conversationService.saveConversation(username, message);
         return "conversation";
     }
+    
+    @GetMapping("/users")
+    public String listUsers(Model model) {
+        List<User> users = conversationService.getAllUsers();
+        model.addAttribute("users", users);
+        return "users";
+    }
 
-    @GetMapping("/conversations")
-    public String listConversations(Model model) {
-        List<Conversation> conversations = conversationService.getAllConversations();
+    @GetMapping("/conversations/{userId}")
+    public String listConversationsByUser(@PathVariable Integer userId, Model model) {
+        List<Conversation> conversations = conversationService.getConversationsByUser(userId);
         model.addAttribute("conversations", conversations);
         return "conversations";
     }
