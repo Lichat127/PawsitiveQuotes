@@ -12,7 +12,7 @@
 			<p><strong>Utilisateur :</strong> <span th:text="${conversation.user.name}"></span></p>
 	        <p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
 	        <p><strong>Réponse :</strong> <span th:text="${conversation.quote}"></span></p>
-	        <p><strong>Date :</strong> <span th:text="${conversation.date}"></span></p>
+			<p><strong>Date :</strong> <span th:text="${#temporals.format(conversation.date, 'dd/MM/yyyy - HH:mm')}"></span></p>
 		</li>
 	</ul>
 </body>

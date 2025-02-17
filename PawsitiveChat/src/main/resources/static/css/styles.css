@@ -1,0 +1,136 @@
+/* styles.css */
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #FFF5E6;
+    color: #4A4A4A;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.bear-image {
+    background-image: url('/images/teddy-bear.png'); /* Remplacez par l'URL de votre image d'ours en peluche */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    opacity: 0.8; 
+}
+
+h2 {
+    color: #8B4513;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    background-color: #FFE4B5;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+label {
+    font-size: 1.2em;
+    color: #8B4513;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #DEB887;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    background-color: #DEB887;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #CD853F;
+}
+
+.quote {
+    background-color: #FFF8DC;
+    border: 2px dashed #DEB887;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.quote h3 {
+    color: #8B4513;
+    margin-top: 0;
+}
+
+.conversation-list, .user-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+}
+
+.conversation-list li, .user-list li {
+    background-color: #FFE4B5;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-list a {
+    color: #8B4513;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.user-list a:hover {
+    color: #CD853F;
+}
+
+hr {
+    border: none;
+    border-top: 2px dashed #DEB887;
+    margin: 15px 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .bear-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    form, .quote {
+        max-width: 100%;
+    }
+}
