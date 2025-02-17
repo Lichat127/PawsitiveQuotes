@@ -26,8 +26,7 @@ public class ConversationService {
         this.restTemplate = restTemplate;
     }
 
-    public void saveConversation(String username, String message) {
-        String quote = getQuote();
+    public void saveConversation(String username, String message, String quote) {
     	User user = findOrCreateUser(username);
     	LocalDateTime date = LocalDateTime.now();
         Conversation conversation = new Conversation(message, quote, date, user);
@@ -50,7 +49,7 @@ public class ConversationService {
     public String getQuote() {
     	try {
             QuoteResponse quoteResponse = restTemplate.getForObject(quoteApiUrl, QuoteResponse.class);
-            return quoteResponse != null ? quoteResponse.getContent() : "Citation par défaut : La vie est belle.";
+            return quoteResponse != null ? quoteResponse.getContent() : "La vie est belle.";
         } catch (HttpStatusCodeException e) {
             return "Désolé, une erreur est survenue lors de la récupération de la citation.";
         } catch (Exception e) {

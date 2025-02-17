@@ -30,8 +30,8 @@ public class ConversationController {
     public String handleConversationSubmission(@RequestParam("username") String username,
                                                @RequestParam("message") String message,
                                                Model model) {
-        conversationService.saveConversation(username, message);
         String quote = conversationService.getQuote();
+        conversationService.saveConversation(username, message, quote);
         model.addAttribute("quote", quote);
         return "conversation";
     }
