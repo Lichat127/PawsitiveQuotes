@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:fragment="headerfiles">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <title>Pawsitive Quotes</title>
+    </th:block>
+</head>
+<body>
+    <header th:fragment="header">
+        <nav>
+            <div class="logo">PawsitiveQuotes</div>
+            <ul>
+                <li><a th:href="@{/}">Accueil</a></li>
+                <li><a th:href="@{/users}">Utilisateurs</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

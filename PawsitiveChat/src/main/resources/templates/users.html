@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Pawsitive Quotes</title>
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <th:block th:replace="fragments/header :: headerfiles"/>
 </head>
 <body>
-	<div class="bear-image"></div>
-    <h2>Liste des Utilisateurs</h2>
-	<ul class="user-list">
-        <li th:each="user : ${users}">
-            <a th:href="@{/conversations/{id}(id=${user.id})}" th:text="${user.name}"></a>
-        </li>
-    </ul>
+    <div th:replace="fragments/header :: header"></div>
+    
+    <main>
+        <div class="bear-image"></div>
+        <h2>Liste des Utilisateurs</h2>
+        <ul class="user-list">
+            <li th:each="user : ${users}">
+                <a th:href="@{/conversations/{id}(id=${user.id})}" th:text="${user.name}"></a>
+            </li>
+        </ul>
+    </main>
 </body>
 </html>

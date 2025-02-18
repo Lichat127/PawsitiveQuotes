@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Pawsitive Quotes</title>
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <th:block th:replace="fragments/header :: headerfiles"/>
 </head>
 <body>
-    <h2>Historique des Conversations</h2>
-	<ul class="conversation-list">
-		<li th:each="conversation : ${conversations}">
-			<p><strong>Utilisateur :</strong> <span th:text="${conversation.user.name}"></span></p>
-	        <p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
-	        <p><strong>Réponse :</strong> <span th:text="${conversation.quote}"></span></p>
-			<p><strong>Date :</strong> <span th:text="${#temporals.format(conversation.date, 'dd/MM/yyyy - HH:mm')}"></span></p>
-		</li>
-	</ul>
+    <div th:replace="fragments/header :: header"></div>
+    
+    <main>
+        <h2>Historique des Conversations</h2>
+        <ul class="conversation-list">
+            <li th:each="conversation : ${conversations}">
+                <p><strong>Utilisateur :</strong> <span th:text="${conversation.user.name}"></span></p>
+                <p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
+                <p><strong>Réponse :</strong> <span th:text="${conversation.quote}"></span></p>
+                <p><strong>Date :</strong> <span th:text="${#temporals.format(conversation.date, 'dd/MM/yyyy - HH:mm')}"></span></p>
+            </li>
+        </ul>
+    </main>
 </body>
 </html>

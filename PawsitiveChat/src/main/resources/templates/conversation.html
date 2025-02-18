@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Pawsitive Quotes</title>
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
-
+    <th:block th:replace="fragments/header :: headerfiles"/>
 </head>
 <body>
-	<div class="bear-image"></div>
-    <h2>PawsitiveQuotes</h2>
-    <form th:action="@{/submit}" method="post">
-        <label for="username">Nom :</label><br>
-        <input type="text" id="username" name="username" required><br><br>
-
-        <label for="message">Message :</label><br>
-        <input type="text" id="message" name="message" required><br><br>
-
-        <input type="submit" value="Envoyer">
-    </form>
-	
-	<div th:if="${quote != null}" class="quote">
-		<h3>Réponse Inspirante :</h3>
-		<p th:text="${quote}"></p>
-	</div>
+    <div th:replace="fragments/header :: header"></div>
+    
+    <main>
+        <div class="bear-image"></div>
+        <h2>Nouvelle Conversation</h2>
+        <form th:action="@{/submit}" method="post">
+            <label for="username">Nom :</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            
+            <label for="message">Message :</label><br>
+            <input type="text" id="message" name="message" required><br><br>
+            
+            <input type="submit" value="Envoyer">
+        </form>
+        
+        <div th:if="${quote != null}" class="quote">
+            <h3>Réponse Inspirante :</h3>
+            <p th:text="${quote}"></p>
+        </div>
+    </main>
 </body>
 </html>
