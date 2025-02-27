@@ -10,13 +10,19 @@
 </head>
 <body>
     <header th:fragment="header">
+		<img src="/image/paws.png" alt="Upside Down Paw" class="paw-top-left">
         <nav>
-            <div class="logo">PawsitiveQuotes</div>
+            <div class="logo">
+				<img src="/image/paws.png" alt="Paw Left" class="paw-left">
+				PawsitiveQuotes
+				<img src="/image/paws.png" alt="Paw Right" class="paw-right">
+			</div>
             <ul>
                 <li><a th:href="@{/}">Accueil</a></li>
                 <li><a th:href="@{/users}">Utilisateurs</a></li>
             </ul>
         </nav>
+		<img src="/image/bear.png" alt="Bear" class="bear-image"/>
     </header>
 </body>
 </html>

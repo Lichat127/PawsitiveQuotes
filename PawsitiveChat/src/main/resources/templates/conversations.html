@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:replace="fragments/header :: headerfiles"/>
+    <th:block th:replace="~{fragments/header :: headerfiles}"/>
 </head>
 <body>
-    <div th:replace="fragments/header :: header"></div>
+	<div th:replace="~{fragments/header :: header}"></div>
     
     <main>
         <h2>Historique des Conversations</h2>
         <ul class="conversation-list">
             <li th:each="conversation : ${conversations}">
                 <p><strong>Utilisateur :</strong> <span th:text="${conversation.user.name}"></span></p>
-                <p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
+				<p><strong>Date :</strong> <span th:text="${#temporals.format(conversation.date, 'dd/MM/yyyy - HH:mm')}"></span></p>
+				<p><strong>Message :</strong> <span th:text="${conversation.message}"></span></p>
                 <p><strong>Réponse :</strong> <span th:text="${conversation.quote}"></span></p>
-                <p><strong>Date :</strong> <span th:text="${#temporals.format(conversation.date, 'dd/MM/yyyy - HH:mm')}"></span></p>
             </li>
         </ul>
     </main>

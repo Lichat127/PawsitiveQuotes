@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:replace="fragments/header :: headerfiles"/>
+    <th:block th:replace="~{fragments/header :: headerfiles}"/>
 </head>
 <body>
-    <div th:replace="fragments/header :: header"></div>
+	<div th:replace="~{fragments/header :: header}"></div>
     
     <main>
         <div class="bear-image"></div>

@@ -1,136 +1,233 @@
-/* styles.css */
+:root {
+  --primary-color: #956A3D;
+  --background-color: #F5F5DC;
+  --hover-color: #DEB887;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background-color: #FFF5E6;
-    color: #4A4A4A;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.bear-image {
-    background-image: url('/images/teddy-bear.png'); /* Remplacez par l'URL de votre image d'ours en peluche */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-    opacity: 0.8; 
+header, main {
+  width: 100%;
+  max-width: 600px;
 }
 
-h2 {
-    color: #8B4513;
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+header {
+  padding: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-grow: 1;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 form {
-    background-color: #FFE4B5;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(150, 106, 61, 0.2);
+  width: 100%;
+  color: var(--background-color);
 }
 
 label {
-    font-size: 1.2em;
-    color: #8B4513;
+  font-size: 1em;
+  color: var(--background-color);
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #DEB887;
-    border-radius: 10px;
-    font-size: 1em;
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
-input[type="submit"] {
-    background-color: #DEB887;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+textarea {
+  height: 185px;
+  resize: none;
+  font-family: inherit;
 }
 
-input[type="submit"]:hover {
-    background-color: #CD853F;
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-button:hover {
+  background-color: var(--hover-color);
+}
+
+.submit-button i {
+  font-size: 1.1em;
 }
 
 .quote {
-    background-color: #FFF8DC;
-    border: 2px dashed #DEB887;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px;
-    max-width: 400px;
-    width: 100%;
+  background-color: var(--background-color);
+  border: 2px dashed var(--primary-color);
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+  width: 100%;
 }
 
 .quote h3 {
-    color: #8B4513;
-    margin-top: 0;
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(150, 106, 61, 0.1);
 }
 
 .conversation-list, .user-list {
-    list-style-type: none;
-    padding: 0;
-    max-width: 600px;
-    width: 100%;
+  list-style-type: none;
+  color: var(--background-color);
+  padding: 0;
+  width: 100%;
 }
 
 .conversation-list li, .user-list li {
-    background-color: #FFE4B5;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(150, 106, 61, 0.1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .user-list a {
-    color: #8B4513;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
+  color: var(--background-color);
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s;
 }
 
 .user-list a:hover {
-    color: #CD853F;
+  color: var(--hover-color);
 }
 
 hr {
-    border: none;
-    border-top: 2px dashed #DEB887;
-    margin: 15px 0;
+  border: none;
+  border-top: 2px dashed var(--primary-color);
+  margin: 15px 0;
 }
 
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
+.bear-image {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  width: 550px;
+  opacity: 0.4;
+  z-index: -1;
+}
 
-    .bear-image {
-        width: 150px;
-        height: 150px;
-    }
+.paw-left, .paw-right {
+  width: 40px;
+  height: auto;
+  position: absolute;
+}
 
-    h2 {
-        font-size: 2em;
-    }
+.paw-left {
+  left: -50px;
+  transform: rotate(15deg);
+}
 
-    form, .quote {
-        max-width: 100%;
-    }
+.paw-right {
+  right: -50px;
+  transform: rotate(-90deg);
+}
+
+.paw-top-left {
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 300px;
+  height: auto;
+  opacity: 0.4;
+  transform: rotate(100deg);
+  z-index: -1;
 }
