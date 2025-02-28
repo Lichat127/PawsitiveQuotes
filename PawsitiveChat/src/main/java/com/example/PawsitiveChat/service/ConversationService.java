@@ -58,15 +58,19 @@ public class ConversationService {
         }
     }
     
-    private static class QuoteResponse {
+    public static class QuoteResponse {
         private String content;
 
-        public String getContent() {
-            return content;
-        }
-
-        public void setContent(String content) {
+        public QuoteResponse(String content) {
             this.content = content;
         }
+
+		public String getContent() {
+            return content;
+        }
+		
+		public void setContent(String content) {
+	        this.content = content;
+	    }
     }
 }
