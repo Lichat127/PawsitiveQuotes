@@ -40,6 +40,7 @@ public class ConversationController {
     public String listUsers(Model model) {
         List<User> users = conversationService.getAllUsers();
         model.addAttribute("users", users);
+        model.addAttribute("isEmpty", users.isEmpty());
         return "users";
     }
 

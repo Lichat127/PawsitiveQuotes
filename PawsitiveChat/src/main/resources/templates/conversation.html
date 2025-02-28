@@ -12,7 +12,7 @@
             
             <form th:action="@{/submit}" method="post">
                 <label for="username">Nom :</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" maxlength="255" required>
                 
                 <label for="message">Message :</label>
                 <textarea type="text" id="message" name="message" maxlength="255" required>

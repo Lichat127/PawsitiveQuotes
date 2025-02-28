@@ -7,8 +7,12 @@
 	<div th:replace="~{fragments/header :: header}"></div>
     
     <main>
-        <div class="bear-image"></div>
         <h2>Liste des Utilisateurs</h2>
+		<div th:if="${isEmpty}">
+			<ul class="user-list">
+				<li>Aucun utilisateur n'a été enregistré pour le moment.</li>
+			</ul>
+		</div>
         <ul class="user-list">
             <li th:each="user : ${users}">
                 <a th:href="@{/conversations/{id}(id=${user.id})}" th:text="${user.name}"></a>
