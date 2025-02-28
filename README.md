@@ -4,8 +4,8 @@
 PawsitiveQuotes is a Java Spring Boot application designed to boost employee morale by providing a platform for them to express their concerns and receive inspirational quotes in return. 
 It consists of two main components:
 
-1.  **PawsitiveQuoteAPI:** A Spring Boot API that provides random inspirational quotes from a database.
-2.  **PawsitiveQuotesApp:** A Spring Boot application with a conversation page and a user/conversation history page.
+1.  **PawsitiveAPI:** A Spring Boot API that provides random inspirational quotes from a database.
+2.  **PawsitiveChat:** A Spring Boot application with a conversation page and a user/conversation history page.
 
 ## Table of Contents
 
@@ -46,8 +46,8 @@ Follow these steps to set up and run the project:
 
 2.  **Configure Application Properties:**
 
-    *   For both the `PawsitiveQuoteAPI` and `PawsitiveQuotesApp`, you will find a file named `application.properties.example`.
-    *   **Copy** this file and **rename** the copy to `application.properties` in the respective directory (`PawsitiveQuoteAPI` and `PawsitiveQuotesApp`).
+    *   For both the `PawsitiveAPI` and `PawsitiveChat`, you will find a file named `application.properties.example`.
+    *   **Copy** this file and **rename** the copy to `application.properties` in the respective directory (`PawsitiveAPI` and `PawsitiveChat`).
 
     *   Edit each `application.properties` file to configure the database connection and other settings. Here's an example of the contents of the `application.properties.example` file:
 
@@ -65,14 +65,14 @@ Follow these steps to set up and run the project:
 
         *   **Note:** You can use a single database for both the API and the main application by using the same database name (`PawsitiveQuotes` in the example). If you prefer, you can use separate databases by specifying different database names for each application.  Make sure to configure the `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password` properties accordingly.
 
-3.  **Build and Run PawsitiveQuoteAPI:**
+3.  **Build and Run PawsitiveAPI:**
     ```
     cd PawsitiveAPI
     mvn clean install
     mvn spring-boot:run
     ```
 
-4.  **Build and Run PawsitiveQuotesApp:**
+4.  **Build and Run PawsitiveChat:**
     ```
     cd ../PawsitiveChat
     mvn clean install
